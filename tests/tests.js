@@ -550,6 +550,13 @@ describe('common usage', function() {
 			'\\u2192\\xE9\\u{1F4A9}',
 			'Alphabetical hexadecimal digits are uppercase when `lowercaseHex: false` and `es6: true`'
 		);
+		assert.equal(
+			jsesc('\xE7\xE7a\xE7\xE7', {
+				'longhand': true,
+			}),
+			'\\u00E7\\u00E7a\\u00E7\\u00E7',
+			'Everything is long form when `longhand: true`'
+		);
 	});
 });
 
