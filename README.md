@@ -344,6 +344,17 @@ jsesc(42, {
 //      ^^
 ```
 
+#### `longhand`
+
+The `longhand` option takes a boolean value (`true` or `false`), and defaults to `false` (disabled). When enabled, [Hexadecimal character escape sequences](https://mathiasbynens.be/notes/javascript-escapes#hexadecimal) are not used.
+
+```js
+jsesc('Ich ♥ Bücher', {
+  'longhand': true
+});
+// → 'Ich \\u2665 B\\u00FCcher'
+//                   ^^^^
+```
 ### `jsesc.version`
 
 A string representing the semantic version number.

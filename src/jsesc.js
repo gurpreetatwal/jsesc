@@ -88,6 +88,7 @@ const jsesc = (argument, options) => {
 		'wrap': false,
 		'es6': false,
 		'json': false,
+		'longhand': false,
 		'compact': true,
 		'lowercaseHex': false,
 		'numbers': 'decimal',
@@ -303,7 +304,7 @@ const jsesc = (argument, options) => {
 		if (!lowercaseHex) {
 			hexadecimal = hexadecimal.toUpperCase();
 		}
-		const longhand = hexadecimal.length > 2 || json;
+		const longhand = hexadecimal.length > 2 || json || options.longhand;
 		const escaped = '\\' + (longhand ? 'u' : 'x') +
 			('0000' + hexadecimal).slice(longhand ? -4 : -2);
 		result += escaped;
